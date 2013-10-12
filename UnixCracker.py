@@ -4,7 +4,7 @@ import crypt
 
 def testPass(cryptPass):
     salt = cryptPass[0:2]
-    dictFile = open('/Users/Aleks/Desktop/Violent Python/CH1/dictionary.txt', 'r')
+    dictFile = open('/path/dictionary.txt', 'r')
     for word in dictFile.readlines():
         word = word.strip('\n')
         cryptWord = crypt.crypt(word, salt)
@@ -15,7 +15,7 @@ def testPass(cryptPass):
     return
 
 def main():
-    passFile = open('/Users/Aleks/Desktop/Violent Python/CH1/passwords.txt')
+    passFile = open('/path/passwords.txt')
     for line in passFile.readlines():
         if ":" in line:
             user = line.split(':')[0]
